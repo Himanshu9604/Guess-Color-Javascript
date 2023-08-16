@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess The Color</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(-45deg, #e74c3c, #27ae60);
+      }
+
+      #options-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      #options-container > div {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      #options-container > div:hover {
+        transform: scale(1.1);
+      }
+
+      #color-code {
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #score {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      h1,
+      h4 {
+        margin: 0;
+        padding: 5px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(-45deg, #f39c12, #2980b9);
+        opacity: 0.1;
+        z-index: -1;
+      }
+
+      h1 {
+        background-color: #f39c12;
+        color: #ffffff;
+      }
+
+      h4 {
+        background-color: #2980b9;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="color-code"></h1>
+    </div>
+    <div>
+      <h4>Score: <span id="score"></span></h4>
+    </div>
+    <div id="options-container"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
